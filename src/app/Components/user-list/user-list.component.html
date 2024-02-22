@@ -1,0 +1,28 @@
+<div class="table-container">
+  <table class="table table-striped table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">First Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList" scope="row" (click)="onSelectRow(user)">
+        <td>
+          {{user.userId}}
+        </td>
+        <td>
+          {{user.firstName}}
+        </td>
+        <td>
+          {{user.lastName}}
+        </td>
+        <td>
+          {{user.email}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

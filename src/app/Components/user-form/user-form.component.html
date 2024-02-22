@@ -1,0 +1,62 @@
+<div class="form-container">
+  <div class="user-form">
+    <h3>Welcome! Add an user</h3>
+    <form [formGroup]="userForm">
+      <div class="form-group d-flex justify-content-center mb-3 flex-column">
+        <label for="userId" class="col-sm-2 col-form-label">
+          User Id:
+        </label>
+        <div>
+          <input id="UserId" type="text" class="form-control" placeholder="Enter an user id" formControlName="userId" />
+        </div>
+        <div *ngIf="getFormControls['userId'].invalid && (getFormControls['userId'].dirty || getFormControls['userId'].touched)" class="error-message">
+          User Id is required
+        </div>
+      </div>
+      <div class="form-group d-flex justify-content-center mb-3 flex-column">
+        <label for="firstName" class="col-sm-2 col-form-label">
+          First Name:
+        </label>
+        <div>
+          <input id="FirstName" type="text" class="form-control" placeholder="Enter a name" formControlName="firstName" />
+        </div>
+        <div *ngIf="getFormControls['firstName'].invalid && (getFormControls['firstName'].dirty || getFormControls['firstName'].touched)" class="error-message">
+          First Name is required
+        </div>
+      </div>
+      <div class="form-group d-flex justify-content-center mb-3 flex-column">
+        <label for="firstName" class="col-sm-2 col-form-label">
+          Last Name:
+        </label>
+        <div>
+          <input id="LastName" type="text" class="form-control" placeholder="Enter a last name" formControlName="lastName" />
+        </div>
+        <div *ngIf="getFormControls['lastName'].invalid && (getFormControls['lastName'].dirty || getFormControls['lastName'].touched)" class="error-message">
+          Last Name is required
+        </div>
+      </div>
+      <div class="form-group d-flex justify-content-center mb-3 flex-column">
+        <label for="firstName" class="col-sm-2 col-form-label">
+          Email:
+        </label>
+        <div>
+          <input id="Email" type="text" class="form-control" placeholder="Enter an email" formControlName="email" />
+        </div>
+        <div *ngIf="getFormControls['email'].invalid && (getFormControls['email'].dirty || getFormControls['email'].touched)" class="error-message">
+          Please enter a valid email address
+        </div>
+      </div>
+      <div class="btn-container">
+        <div class="text-center">
+          <button class="btn-primary btn" (click)="addUser()">Add User</button>
+        </div>
+        <div class="text-center">
+          <button class="btn-primary btn" (click)="updateUser()">Edit User</button>
+        </div>
+        <div class="text-center">
+          <button class="btn-primary btn delete" (click)="deleteUser()">Remove User</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

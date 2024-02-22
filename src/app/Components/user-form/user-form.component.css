@@ -1,0 +1,78 @@
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.user-form {
+  width: 20%;
+  min-width: 400px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.citizen-form h3 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.text-center button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  max-width: 130px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete{
+    background-color: #ff0000 !important;
+}
+
+.error-message {
+  color: #dc3545; 
+  font-size: 14px; 
+  margin-top: 5px; 
+  font-weight: bold
+}
+
+.text-center button:last-child {
+  margin-top: 10px;
+  background-color: #28a745;
+}
+
+.text-center button:hover {
+  background-color: #0056b3;
+}
+
+.text-center button:last-child:hover {
+  background-color: #218838;
+}
