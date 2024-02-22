@@ -22,12 +22,10 @@ export class UserService {
   }
 
   updateUser(user: User, userId: number): Observable<Result> {
-    console.log("update,service")
     return this.http.put<Result>(this.baseUrl + '/' + userId, user)
   }
 
   deleteUser(id?: number): Observable<Result> {
-    console.log("delete");
     return this.http.delete<Result>(this.baseUrl+ '/' + id)
   }
 }

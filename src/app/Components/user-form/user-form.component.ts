@@ -49,7 +49,7 @@ export class UserFormComponent {
     return this.userForm.controls;
   }
 
-  public addUser() {
+  public async addUser() {
     if (this.userForm.invalid) {
       return;
     }
@@ -62,7 +62,7 @@ export class UserFormComponent {
     };
 
 
-    this.userServices.addUser(user).subscribe(res => {
+    await this.userServices.addUser(user).subscribe(res => {
       if (res.error != null && res.error != '')
         this.requestResult = res.text;
       else
@@ -83,7 +83,7 @@ export class UserFormComponent {
     this.selectedRowData = rowData;
   }
 
-  public updateUser() {
+  public async updateUser() {
     if (this.userForm.invalid) {
       return;
     }
@@ -96,7 +96,7 @@ export class UserFormComponent {
       email: this.userForm.controls['email'].value,
     };
 
-    this.userServices.updateUser(user, user.userId).subscribe(res => {
+    await this.userServices.updateUser(user, user.userId).subscribe(res => {
       if (res.error != null && res.error != '')
         this.requestResult = res.text;
       else
@@ -107,7 +107,7 @@ export class UserFormComponent {
     window.location.reload();
   }
 
-  public deleteUser() {
+  public async deleteUser() {
     if (this.userForm.invalid) {
       return;
     }
@@ -120,7 +120,7 @@ export class UserFormComponent {
       email: this.userForm.controls['email'].value,
     };
 
-    this.userServices.deleteUser(user.userId).subscribe(res => {
+    await this.userServices.deleteUser(user.userId).subscribe(res => {
       if (res.error != null && res.error != '')
         this.requestResult = res.text;
       else
