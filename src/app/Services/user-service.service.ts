@@ -21,9 +21,9 @@ export class UserService {
     return this.http.post<Result>(this.baseUrl, user);
   }
 
-  updateUser(user: User, citizenId: number): Observable<Result> {
+  updateUser(user: User, userId: number): Observable<Result> {
     console.log("update,service")
-    return this.http.put<Result>(this.baseUrl + citizenId, user)
+    return this.http.put<Result>(this.baseUrl + '/' + userId, user)
   }
 
   deleteUser(id?: number): Observable<Result> {

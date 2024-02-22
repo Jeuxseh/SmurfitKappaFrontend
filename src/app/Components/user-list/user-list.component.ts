@@ -1,6 +1,4 @@
 
-import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { User } from '../../Models/user';
 import { SharedDataService } from '../../Services/shared-data.service';

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, TemplateRef, ViewChild, OnChanges } from '@angular/core'
+import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { User } from '../../Models/user';
 import { UserService } from '../../Services/user-service.service';
@@ -53,7 +53,6 @@ export class UserFormComponent {
     if (this.userForm.invalid) {
       return;
     }
-    console.log("Valid")
     let user: User =
     {
       userId: this.userForm.controls['userId'].value,
@@ -85,8 +84,6 @@ export class UserFormComponent {
   }
 
   public updateUser() {
-    console.log("update", this.userForm);
-    this.sent = true;
     if (this.userForm.invalid) {
       return;
     }
@@ -99,7 +96,7 @@ export class UserFormComponent {
       email: this.userForm.controls['email'].value,
     };
 
-    this.userServices.updateUser(user, this.userIdQueryString).subscribe(res => {
+    this.userServices.updateUser(user, user.userId).subscribe(res => {
       if (res.error != null && res.error != '')
         this.requestResult = res.text;
       else
@@ -111,9 +108,7 @@ export class UserFormComponent {
   }
 
   public deleteUser() {
-    console.log("deleteeee");
     if (this.userForm.invalid) {
-      console.log(this.userForm);
       return;
     }
 
