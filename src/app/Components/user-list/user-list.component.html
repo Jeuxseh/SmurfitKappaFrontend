@@ -1,27 +1,29 @@
 <div class="table-container">
-  <table class="table table-striped table-responsive">
+  <table mat-table class="table table-striped table-responsive">
     <thead>
       <tr>
-        <th scope="col">User Id</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">First Name</th>
+        <th scope="col" (click)="onSort('userId')" class="fixed-width-column">
+          User Id
+          <span [class]="sortColumn === 'userId' ? (sortDirection === 'asc' ? 'arrow-up' : 'arrow-down') : 'both-arrows'"></span>
+        </th>
+        <th scope="col" (click)="onSort('firstName')" class="fixed-width-column">
+          First Name
+          <span [class]="sortColumn === 'firstName' ? (sortDirection === 'asc' ? 'arrow-up' : 'arrow-down') : 'both-arrows'"></span>
+        </th>
+        <th scope="col" class="fixed-width-column">
+          Last Name
+        </th>
+        <th scope="col" class="fixed-width-column">
+          Email
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of userList" scope="row" (click)="onSelectRow(user)">
-        <td>
-          {{user.userId}}
-        </td>
-        <td>
-          {{user.firstName}}
-        </td>
-        <td>
-          {{user.lastName}}
-        </td>
-        <td>
-          {{user.email}}
-        </td>
+        <td>{{ user.userId }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
       </tr>
     </tbody>
   </table>

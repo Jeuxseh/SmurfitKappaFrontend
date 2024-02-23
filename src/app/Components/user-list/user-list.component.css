@@ -1,6 +1,8 @@
-.table-container{
-    display: flex;
-    justify-content: center;
+.table-container {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  width: 100%;
 }
 
 table {
@@ -29,4 +31,21 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #e6f7ff;
+}
+
+.arrow-up::before {
+  content: '\25B2';
+}
+
+.arrow-down::before {
+  content: '\25BC'; 
+}
+
+.both-arrows::before {
+  content: '\25B2 \25BC'; 
+}
+
+.fixed-width-column {
+  width: 150px;
+  white-space: nowrap; 
 }

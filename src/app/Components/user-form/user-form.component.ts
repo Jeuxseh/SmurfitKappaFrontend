@@ -125,6 +125,7 @@ export class UserFormComponent {
         this.requestResult = res.text;
       else
         this.requestResult = "User removed correctly";
+
     });
     window.location.reload();
   }
