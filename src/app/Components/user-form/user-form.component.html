@@ -1,13 +1,13 @@
 <div class="form-container">
   <div class="user-form">
-    <h3>Welcome! Add an user</h3>
+    <h3>Welcome! Add a user</h3>
     <form [formGroup]="userForm">
       <div class="form-group d-flex justify-content-center mb-3 flex-column">
         <label for="userId" class="col-sm-2 col-form-label">
           User Id:
         </label>
         <div>
-          <input id="UserId" type="text" class="form-control" placeholder="Enter an user id" formControlName="userId" />
+          <input id="UserId" type="text" class="form-control" placeholder="Enter a user id" formControlName="userId" />
         </div>
         <div *ngIf="getFormControls['userId'].invalid && (getFormControls['userId'].dirty || getFormControls['userId'].touched)" class="error-message">
           User Id is required
